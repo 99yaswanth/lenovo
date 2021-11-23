@@ -7,8 +7,7 @@ pipeline{
     stages{
         stage("verify tomcat scipt"){
             steps{
-                //sh "ls -l tomcatinstallation.sh"
-
+                sh "ls -l"
             }
         }
         stage("copy tomcat script to remote server "){
