@@ -13,8 +13,8 @@ pipeline{
         stage("copy tomcat script to remote server "){
             steps{
                 sh """
-                scp -i /tmp/nvirginia.pem tomcatinstallation.sh ec2-user@${SERVERIP}:/tmp/
-                ssh -i /tmp/nvirginia.pem ec2-user@${SERVERIP} "ls -l /tmp/
+                scp -o StrictHostKeyChecking=no -i /tmp/nvirginia.pem tomcatinstallation.sh ec2-user@${SERVERIP}:/tmp/
+                ssh -o StrictHostKeyChecking=no -i /tmp/nvirginia.pem ec2-user@${SERVERIP} "ls -l /tmp/
                 """
             }
         }
